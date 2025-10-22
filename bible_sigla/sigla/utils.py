@@ -114,8 +114,7 @@ for book, keys in _RAW_BOOK_ALIASES.items():
     for key in keys:
         _BOOK_ALIASES[key] = book
 _REFERENCE_PATTERN = re.compile(
-    r"(?P<book>(?:[1-3]\s*)?[A-Za-zĄĆĘŁŃÓŚŹŻa-ząćęłńóśźż\.]+)\s*"
-    r"(?P<chapter>\d{1,3})(?:[,:](?P<verses>[\d\-–—,.\s]+))?"
+    r"(?P<book>(?:[1-3]\s*)?[A-Za-zĄĆĘŁŃÓŚŹŻa-ząćęłńóśźż\.]+)\s+" r"(?P<chapter>\d{1,3})(?:[,:](?P<verses>[\d\-–—,.\s]+))?"
 )
 
 
