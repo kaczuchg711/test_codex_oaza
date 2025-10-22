@@ -1,0 +1,4 @@
+django==5.2.7
+pillow==12.0.0
+pytesseract==0.3.13
+pythonbible==0.13.1

@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <title>Rozpoznawanie sigli biblijnych</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Rozpoznawanie sigli biblijnych</h1>
+      <p>
+        Prześlij zdjęcie lub zrzut ekranu z podręcznika, a aplikacja spróbuje
+        odczytać sigla i pobrać odpowiadające im fragmenty Pisma Świętego.
+      </p>
+
+      {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+            <li class="{{ message.tags }}">{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      <form method="post" enctype="multipart/form-data" class="upload-form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Wyślij</button>
+      </form>
+
+      {% if extracted_text %}
+        <section class="results">
+          <h2>Wyniki</h2>
+
+          {% if results %}
+            <div class="passages">
+              {% for result in results %}
+                <article>
+                  <h3>{{ result.label }}</h3>
+                  <pre>{{ result.text }}</pre>
+                </article>
+              {% endfor %}
+            </div>
+          {% else %}
+            <p>Nie znaleziono sigli w przesłanym materiale.</p>
+          {% endif %}
+
+          <details>
+            <summary>Tekst odczytany przez OCR</summary>
+            <pre class="ocr">{{ extracted_text }}</pre>
+          </details>
+        </section>
+      {% endif %}
+    </main>
+  </body>
+</html>

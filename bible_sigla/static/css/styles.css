@@ -1,0 +1,122 @@
+body {
+  background: #f1f5f9;
+  color: #0f172a;
+  font-family: "Inter", "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 2rem 1rem 4rem;
+}
+
+.container {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.15);
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 2.5rem 3rem;
+}
+
+h1,
+ h2,
+ h3 {
+  color: #1e293b;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.upload-form {
+  background: #f8fafc;
+  border-radius: 10px;
+  border: 1px solid #cbd5f5;
+  margin: 2rem 0;
+  padding: 1.5rem;
+}
+
+.upload-form button {
+  background: #2563eb;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  transition: background 0.2s ease-in-out;
+}
+
+.upload-form button:hover {
+  background: #1d4ed8;
+}
+
+.messages {
+  list-style: none;
+  margin: 1.5rem 0;
+  padding: 0;
+}
+
+.messages li {
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  padding: 0.75rem 1rem;
+}
+
+.messages li.error {
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #991b1b;
+}
+
+.messages li.warning {
+  background: #fef9c3;
+  border: 1px solid #fcd34d;
+  color: #92400e;
+}
+
+.passages {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.passages article {
+  background: #fff7ed;
+  border-left: 4px solid #f97316;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+}
+
+.passages h3 {
+  margin-top: 0;
+}
+
+.passages pre {
+  font-family: "Fira Code", "Source Code Pro", monospace;
+  font-size: 0.95rem;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+.results details {
+  margin-top: 2rem;
+}
+
+.results pre.ocr {
+  background: #0f172a;
+  border-radius: 8px;
+  color: #f8fafc;
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 1rem;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 1.5rem;
+  }
+
+  .upload-form {
+    padding: 1rem;
+  }
+}
